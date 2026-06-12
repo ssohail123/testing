@@ -2,12 +2,12 @@ pipeline {
     agent any
 
     stages {
-        stage("Check PR") {
+        stage("Build Info") {
             steps {
-                echo "Event: ${env.pr_event}"
-                echo "PR: ${env.approved_pr}"
-                echo "User: ${env.approved_user}"
-                echo "Repo: ${env.pr_repo_name}"
+                echo "Build triggered successfully"
+                echo "Branch: ${env.GIT_BRANCH}"
+                echo "Commit: ${env.GIT_COMMIT}"
+                echo "Repo: ${env.GIT_URL}"
             }
         }
     }
